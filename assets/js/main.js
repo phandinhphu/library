@@ -12,8 +12,6 @@ line.style = `
         width: ${offsetWidth}px;
     `;
 
-	console.log(tabActive.offsetLeft);
-
 // Process hover
 $$(".first__items").forEach((item) => {
 	item.addEventListener("mouseenter", (e) => {

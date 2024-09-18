@@ -37,12 +37,12 @@
 					</a>
 					<div class="header__menu">
 						<ul class="first__list">
-							<li class="first__items active">
+							<li class="first__items">
 								<a class="first__items-link" href="index.html"
 									>Trang chủ</a
 								>
 							</li>
-							<li class="first__items">
+							<li class="first__items active">
 								<a class="first__items-link" href="tracuu.html"
 									>Tra cứu</a
 								>
@@ -88,10 +88,41 @@
                     <div class="row">
                         <div class="col l-12 component">
                             <div class="title">
-                                <h2 class="title__text">Sách mới nhất</h2>
+                                <h2 class="title__text">Tra cứu</h2>
                             </div>
                             <div class="component__content">
-                                <div class="list__items">
+                                <div class="component">
+                                    <form class="form__filter" action="">
+                                        <div class="form__group">
+                                            <label for="book_name" class="form__filter-label">Tên sách</label>
+                                            <input type="text" name="book_name" id="book_name" class="form__filter-input">
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="author_name" class="form__filter-label">Tên tác giả</label>
+                                            <input type="text" name="author_name" id="author_name" class="form__filter-input">
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="publisher_name" class="form__filter-label">Nhà xuất bản</label>
+                                            <input type="text" name="publisher_name" id="publisher_name" class="form__filter-input">
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="code_isbn" class="form__filter-label">Mã ISBN</label>
+                                            <input type="text" name="code_isbn" id="code_isbn" class="form__filter-input">
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="year_published" class="form__filter-label">Năm xuất bản</label>
+                                            <input type="number" name="year_published" id="year_published" class="form__filter-input">
+                                        </div>
+                                        <div class="form__group">
+                                            <button type="submit" class="btn">Tra cứu</button>
+                                        </div>
+                                        <div class="form__group">
+                                            <a href="#" class="btn">Hủy</a>
+                                        </div>
+                                    </form>
+                                </div>
+
+								<div class="list__items">
                                     <div class="row">
                                         <a href="detail.html" class="col l-2-4">
                                             <div class="list__item">
@@ -143,65 +174,21 @@
                                         </a>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col l-12 component">
-                            <div class="title">
-                                <h2 class="title__text">Most liked</h2>
-                            </div>
-                            <div class="component__content">
-                                <div class="list__items">
-                                    <div class="row">
-                                        <a href="detail.html" class="col l-2-4">
-                                            <div class="list__item">
-                                                <img class="book__img" src="./assets/img/no-image.png" alt="" />
-                                                <div class="book__title">
-                                                    <h3 class="book__title-text">Sách 1</h3>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="detail.html" class="col l-2-4">
-                                            <div class="list__item">
-                                                <img class="book__img" src="./assets/img/no-image.png" alt="" />
-                                                <div class="book__title">
-                                                    <h3 class="book__title-text">Sách 1</h3>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="detail.html" class="col l-2-4">
-                                            <div class="list__item">
-                                                <img class="book__img" src="./assets/img/no-image.png" alt="" />
-                                                <div class="book__title">
-                                                    <h3 class="book__title-text">Sách 1</h3>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="detail.html" class="col l-2-4">
-                                            <div class="list__item">
-                                                <img class="book__img" src="./assets/img/no-image.png" alt="" />
-                                                <div class="book__title">
-                                                    <h3 class="book__title-text">Sách 1</h3>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="detail.html" class="col l-2-4">
-                                            <div class="list__item">
-                                                <img class="book__img" src="./assets/img/no-image.png" alt="" />
-                                                <div class="book__title">
-                                                    <h3 class="book__title-text">Sách 1</h3>
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <a href="detail.html" class="col l-2-4">
-                                            <div class="list__item">
-                                                <img class="book__img" src="./assets/img/no-image.png" alt="" />
-                                                <div class="book__title">
-                                                    <h3 class="book__title-text">Sách 1</h3>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
+
+								<div class="pagination">
+									<a href="#" class="pagination__prev">
+										<i class="fa fa-arrow-left"></i>
+									</a>
+
+									<a href="#" class="pagination__number pagination__number--active">1</a>
+									<a href="#" class="pagination__number">2</a>
+									<a href="#" class="pagination__number">3</a>
+									<a href="#" class="pagination__number">4</a>
+
+									<a href="#" class="pagination__next">
+										<i class="fa fa-arrow-right"></i>
+									</a>
+								</div>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,84 @@
+.component__content > .form__auth {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#form__auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    /* width: 350px; */
+    background-color: #fff;
+}
+
+#form__auth .heading {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.spacer {
+    margin-bottom: 20px;
+}
+
+.form__auth-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.avatar__label {
+	display: flex;
+	align-items: center;
+}
+
+.avatar {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-right: 1.2rem;
+}
+
+.form__auth-label {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.form__auth-input {
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form__auth-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.form__auth-input:hover {
+    border-color: var(--color-primary);
+}
+
+.form__auth-message {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.form__auth-group.invalid .form__auth-input {
+    border-color: #ff0000;
+}
+
+.form__auth-group.invalid .form__auth-message {
+    color: #ff0000;
+}
+
+.form__auth-group.invalid .form__auth-label {
+    color: #ff0000;
+}
