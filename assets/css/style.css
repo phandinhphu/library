@@ -250,7 +250,6 @@ header {
     background-color: var(--color-primary);
     padding: 20px;
     border-radius: 5px;
-    margin: 20px 0;
 }
 
 .comment__avatar {
@@ -303,7 +302,7 @@ header {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    margin: 20px;
+    margin-bottom: 20px;
     background-color: var(--color-text);
     border-radius: 5px;
 }
@@ -313,7 +312,7 @@ header {
     background-color: var(--color-black);
     border-radius: 5px;
     width: 100%;
-    padding: 6px;
+    padding: 16px;
     margin: 12px 0 20px 0;
 }
 
