@@ -26,7 +26,6 @@
 		/>
 		<link rel="stylesheet" href="./assets/css/grid.css" />
 		<link rel="stylesheet" href="./assets/css/style.css" />
-		<link rel="stylesheet" href="./assets/css/auth.css" />
 	</head>
 	<body>
 		<div class="app">
@@ -93,7 +92,7 @@
 			<div class="container">
 				<div class="grid wide">
 					<div class="row">
-						<div class="col l-12 component">
+						<div class="col l-6 l-o-3 component">
 							<div class="title">
 								<h2 class="title__text">Đăng ký</h2>
 							</div>
@@ -167,6 +166,22 @@
 											id="phone"
 											name="phone"
 											placeholder="Vd: 0123456789"
+										/>
+										<span class="form__auth-message"></span>
+									</div>
+									<div class="form__auth-group">
+										<label
+											for="cccd"
+											class="form__auth-label"
+											>Số CCCD</label
+										>
+										<input
+											type="number"
+											class="form__auth-input"
+											rules="required|min:9"
+											id="cccd"
+											name="cccd"
+											placeholder="Vd: 217627049"
 										/>
 										<span class="form__auth-message"></span>
 									</div>

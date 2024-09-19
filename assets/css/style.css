@@ -424,6 +424,130 @@ header {
     background-color: var(--color-hover);
 }
 
+/* profile */
+.list__groups {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    background-color: var(--color-hover);
+    color: #fff;
+    font-size: 1.6rem;
+}
+
+.list__group-item {
+    padding: 1rem;
+}
+
+.list__group-item-link {
+    display: block;
+	font-size: 1.6rem;
+	text-decoration: none;
+	color: var(--color-text);
+	padding: 0.8rem;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.list__group-item-link.selected,
+.list__group-item-link:hover {
+	text-decoration: none;
+	background-color: var(--color-primary);
+	color: #fff;
+	border-bottom: 1px solid #ccc;
+}
+
+.list__group-item-link.selected {
+	pointer-events: none;
+}
+
+.component__content > .form__auth {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#form__auth {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--color-primary);
+}
+
+#form__auth .heading {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.spacer {
+    margin-bottom: 20px;
+}
+
+.form__auth-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.avatar__label {
+	display: flex;
+	align-items: center;
+}
+
+.avatar {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	object-fit: cover;
+	margin-right: 1.2rem;
+}
+
+.form__auth-label {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form__auth-input {
+    background-color: var(--color-hover);
+    color: var(--text-color);
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.form__auth-input:focus {
+    outline: none;
+    border-color: var(--color-hover);
+}
+
+.form__auth-input:hover {
+    border-color: var(--color-hover);
+}
+
+.form__auth-message {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.form__auth-group.invalid .form__auth-input {
+    border-color: #ff0000;
+}
+
+.form__auth-group.invalid .form__auth-message {
+    color: #ff0000;
+}
+
+.form__auth-group.invalid .form__auth-label {
+    color: #ff0000;
+}
+
 /* footer */
 .footer {
 	display: flex;
