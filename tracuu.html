@@ -24,6 +24,8 @@
 			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 			crossorigin="anonymous"
 		/>
+		<!-- Thêm Select2 CSS -->
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
         <link rel="stylesheet" href="./assets/css/grid.css" />
 		<link rel="stylesheet" href="./assets/css/style.css" />
 	</head>
@@ -117,6 +119,28 @@
                                         <div class="form__group">
                                             <label for="year_published" class="form__filter-label">Năm xuất bản</label>
                                             <input type="number" name="year_published" id="year_published" class="form__filter-input">
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="category" class="form__filter-label" style="width: 90px;">Thể loại</label>
+                                            <select
+                                                name="category[]"
+                                                id="category"
+                                                class="form__filter-input"
+                                                multiple="multiple"
+                                            >
+                                                <option value="1">
+                                                    Adventure
+                                                </option>
+                                                <option value="2">
+                                                    Horror
+                                                </option>
+                                                <option value="3">
+                                                    Romantic
+                                                </option>
+                                                <span
+                                                    class="form__message"
+                                                ></span>
+                                            </select>
                                         </div>
                                         <div class="form__group">
                                             <button type="submit" class="btn">Tra cứu</button>
@@ -245,5 +269,36 @@
 			integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
 			crossorigin="anonymous"
 		></script>
+		<!-- Thêm Select2 JS -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+        <script>
+            function matchCategory(params, data) {
+				// Nếu không có giá trị trả về hoặc không có giá trị tìm kiếm thì trả về null
+				if (jQuery.trim(params.term) === "") {
+					return data;
+				}
+
+				// Nếu tìm thấy giá trị trả về
+				if (data.text.toLowerCase().indexOf(params.term.toLowerCase()) > -1) {
+					var modifiedData = jQuery.extend({}, data, true);
+					modifiedData.text += " (tìm thấy)";
+					return modifiedData;
+				}
+
+				// Nếu không tìm thấy giá trị trả về
+				return null;
+			}
+
+			jQuery(document).ready(function() {
+				jQuery('#category').select2({
+					placeholder: "Chọn thể loại",
+					allowClear: true,
+					matcher: matchCategory,
+					minimumResultsForSearch: -1,
+                    width: "100%"
+				});
+			});
+        </script>
 	</body>
 </html>
