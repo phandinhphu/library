@@ -29,12 +29,22 @@
 
 		<style>
 			.text-truncate {
-			  max-width: 150px; /* Adjust the width as needed */
+				max-width: 150px; /* Adjust the width as needed */
+			}
+
+			.tooltip.show {
+				opacity: 1;
+			}
+
+			.tooltip-arrow::before {
+				border-top-color: var(--color-white) !important; /* Màu nền */
 			}
 
 			.tooltip-inner {
-				font-size: 1.6rem;  /* Tăng kích thước font chữ */
-				padding: 0.8rem;     /* Điều chỉnh khoảng cách */
+				font-size: 1.6rem; /* Tăng kích thước font chữ */
+				padding: 0.8rem; /* Điều chỉnh khoảng cách */
+				background-color: var(--color-white); /* Màu nền */
+				color: var(--color-black); /* Màu chữ */
 			}
 
 			@media (max-width: 63.9375em) {
@@ -177,20 +187,84 @@
 									<thead>
 										<tr>
 											<th>STT</th>
-											<th>Mã ISBN</th>
-											<th>Tên sách</th>
-											<th>Tên tác giả</th>
-											<th>Ngày trả</th>
-											<th>Số lượng</th>
-											<th>Thao tác</th>
+											<th>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Mã ISBN"
+													>Mã ISBN</span
+												>
+											</th>
+											<th>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Tên sách"
+													>Tên sách</span
+												>
+											</th>
+											<th>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Tác giả"
+													>Tác giả</span
+												>
+											</th>
+											<th>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Ngày trả"
+													>Ngày trả</span
+												>
+											</th>
+											<th>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Số lượng"
+													>Số lượng</span
+												>
+											</th>
+											<th>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Thao tác"
+													>Thao tác</span
+												>
+											</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td>1</td>
-											<td>978-3-16-148410-0</td>
-											<td>Harry Potter</td>
-											<td>J.K.Rowling</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="978-3-16-148410-0"
+													>978-3-16-148410-0</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Harry Potter và Hòn Đá Phù Thủy"
+													>Harry Potter và Hòn Đá Phù
+													Thủy</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="J.K.Rowling"
+													>J.K.Rowling</span
+												>
+											</td>
 											<td>
 												<input
 													type="date"
@@ -217,9 +291,31 @@
 										</tr>
 										<tr>
 											<td>2</td>
-											<td>978-3-16-148410-0</td>
-											<td>Harry Potter</td>
-											<td>J.K.Rowling</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="978-3-16-148410-0"
+													>978-3-16-148410-0</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Harry Potter và Hòn Đá Phù Thủy"
+													>Harry Potter và Hòn Đá Phù
+													Thủy</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="J.K.Rowling"
+													>J.K.Rowling</span
+												>
+											</td>
 											<td>
 												<input
 													type="date"
@@ -246,9 +342,31 @@
 										</tr>
 										<tr>
 											<td>3</td>
-											<td>978-3-16-148410-0</td>
-											<td>Harry Potter</td>
-											<td>J.K.Rowling</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="978-3-16-148410-0"
+													>978-3-16-148410-0</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Harry Potter và Hòn Đá Phù Thủy"
+													>Harry Potter và Hòn Đá Phù
+													Thủy</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="J.K.Rowling"
+													>J.K.Rowling</span
+												>
+											</td>
 											<td>
 												<input
 													type="date"
@@ -338,7 +456,7 @@
 						</a>
 					</li>
 				</ul>
-				<p class="text-center text-white">© 2024 Phan Đình Phú</p>
+				<p class="text-center text-white">© 2024 Nhóm 3</p>
 			</footer>
 		</div>
 
@@ -359,5 +477,17 @@
 			integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
 			crossorigin="anonymous"
 		></script>
+
+		<script>
+			// Initialize tooltips
+			var tooltipTriggerList = [].slice.call(
+				document.querySelectorAll('[data-bs-toggle="tooltip"]')
+			);
+			var tooltipList = tooltipTriggerList.map(function (
+				tooltipTriggerEl
+			) {
+				return new bootstrap.Tooltip(tooltipTriggerEl);
+			});
+		</script>
 	</body>
 </html>

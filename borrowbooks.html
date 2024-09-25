@@ -24,17 +24,27 @@
 			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 			crossorigin="anonymous"
 		/>
-        <link rel="stylesheet" href="./assets/css/grid.css" />
+		<link rel="stylesheet" href="./assets/css/grid.css" />
 		<link rel="stylesheet" href="./assets/css/style.css" />
 
 		<style>
 			.text-truncate {
-			  max-width: 150px; /* Adjust the width as needed */
+				max-width: 150px; /* Adjust the width as needed */
+			}
+
+			.tooltip.show {
+				opacity: 1;
+			}
+
+			.tooltip-arrow::before {
+				border-top-color: var(--color-white) !important; /* Màu nền */
 			}
 
 			.tooltip-inner {
-				font-size: 1.6rem;  /* Tăng kích thước font chữ */
-				padding: 0.8rem;     /* Điều chỉnh khoảng cách */
+				font-size: 1.6rem; /* Tăng kích thước font chữ */
+				padding: 0.8rem; /* Điều chỉnh khoảng cách */
+				background-color: var(--color-white); /* Màu nền */
+				color: var(--color-black); /* Màu chữ */
 			}
 
 			@media (max-width: 63.9375em) {
@@ -64,13 +74,17 @@
 									>Tra cứu</a
 								>
 							</li>
-                            <li class="first__items">
-								<a class="first__items-link" href="wishlist.html"
+							<li class="first__items">
+								<a
+									class="first__items-link"
+									href="wishlist.html"
 									>Wish list</a
 								>
 							</li>
 							<li class="first__items active">
-								<a class="first__items-link" href="borrowbooks.html"
+								<a
+									class="first__items-link"
+									href="borrowbooks.html"
 									>Sách mượn</a
 								>
 							</li>
@@ -89,12 +103,16 @@
 						<div class="header__menu">
 							<ul class="first__list">
 								<li class="first__items">
-									<a class="first__items-link" href="login.html"
+									<a
+										class="first__items-link"
+										href="login.html"
 										>Đăng nhập</a
 									>
 								</li>
 								<li class="first__items">
-									<a class="first__items-link" href="register.html"
+									<a
+										class="first__items-link"
+										href="register.html"
 										>Đăng ký</a
 									>
 								</li>
@@ -106,119 +124,436 @@
 
 			<!-- main -->
 			<div class="container">
-                <div class="grid wide">
-                    <div class="row">
-                        <div class="col l-12 component">
-                            <div class="title">
-                                <h2 class="title__text">Sách mượn</h2>
-                            </div>
-                            <div class="component__content">
-                                <div class="component">
-                                    <form class="form__filter" action="">
-                                        <div class="form__group">
-                                            <label for="book_name" class="form__filter-label">Tên sách</label>
-                                            <input type="text" name="book_name" id="book_name" class="form__filter-input">
-                                        </div>
-                                        <div class="form__group">
-                                            <label for="author_name" class="form__filter-label">Tên tác giả</label>
-                                            <input type="text" name="author_name" id="author_name" class="form__filter-input">
-                                        </div>
-                                        <div class="form__group">
-                                            <label for="publisher_name" class="form__filter-label">Nhà xuất bản</label>
-                                            <input type="text" name="publisher_name" id="publisher_name" class="form__filter-input">
-                                        </div>
-                                        <div class="form__group">
-                                            <label for="code_isbn" class="form__filter-label">Mã ISBN</label>
-                                            <input type="text" name="code_isbn" id="code_isbn" class="form__filter-input">
-                                        </div>
-                                        <div class="form__group">
-                                            <label for="year_published" class="form__filter-label">Năm xuất bản</label>
-                                            <input type="number" name="year_published" id="year_published" class="form__filter-input">
-                                        </div>
-                                        <div class="form__group">
-                                            <label for="sort" class="form__filter-label">Sắp xếp</label>
-                                            <select name="sort" id="sort" class="form__filter-input">
-                                                <option value="1">Tên sách(A->Z)</option>
-                                                <option value="2">Ngày mượn(giảm dần)</option>
-                                                <option value="3">Ngày trả(giảm dần)</option>
-                                            </select>
-                                        </div>
-                                        <div class="form__group">
-                                            <button type="submit" class="btn">Lọc</button>
-                                        </div>
-                                        <div class="form__group">
-                                            <a href="#" class="btn">Hủy</a>
-                                        </div>
-                                    </form>
-                                </div>
+				<div class="grid wide">
+					<div class="row">
+						<div class="col l-12 component">
+							<div class="title">
+								<h2 class="title__text">Sách mượn</h2>
+							</div>
+							<div class="component__content">
+								<div class="component">
+									<form class="form__filter" action="">
+										<div class="form__group">
+											<label
+												for="book_name"
+												class="form__filter-label"
+												>Tên sách</label
+											>
+											<input
+												type="text"
+												name="book_name"
+												id="book_name"
+												class="form__filter-input"
+											/>
+										</div>
+										<div class="form__group">
+											<label
+												for="author_name"
+												class="form__filter-label"
+												>Tên tác giả</label
+											>
+											<input
+												type="text"
+												name="author_name"
+												id="author_name"
+												class="form__filter-input"
+											/>
+										</div>
+										<div class="form__group">
+											<label
+												for="publisher_name"
+												class="form__filter-label"
+												>Nhà xuất bản</label
+											>
+											<input
+												type="text"
+												name="publisher_name"
+												id="publisher_name"
+												class="form__filter-input"
+											/>
+										</div>
+										<div class="form__group">
+											<label
+												for="code_isbn"
+												class="form__filter-label"
+												>Mã ISBN</label
+											>
+											<input
+												type="text"
+												name="code_isbn"
+												id="code_isbn"
+												class="form__filter-input"
+											/>
+										</div>
+										<div class="form__group">
+											<label
+												for="year_published"
+												class="form__filter-label"
+												>Năm xuất bản</label
+											>
+											<input
+												type="number"
+												name="year_published"
+												id="year_published"
+												class="form__filter-input"
+											/>
+										</div>
+										<div class="form__group">
+											<label
+												for="sort"
+												class="form__filter-label"
+												>Sắp xếp</label
+											>
+											<select
+												name="sort"
+												id="sort"
+												class="form__filter-input"
+											>
+												<option value="1">
+													Tên sách(A->Z)
+												</option>
+												<option value="2">
+													Ngày mượn(giảm dần)
+												</option>
+												<option value="3">
+													Ngày trả(giảm dần)
+												</option>
+											</select>
+										</div>
+										<div class="form__group">
+											<button type="submit" class="btn">
+												Lọc
+											</button>
+										</div>
+										<div class="form__group">
+											<a href="#" class="btn">Hủy</a>
+										</div>
+									</form>
+								</div>
 
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>STT</th>
-											<th>Mã ISBN</th>
-                                            <th>Tên sách</th>
-                                            <th>Tên tác giả</th>
-                                            <th>Ngày mượn</th>
-                                            <th>Ngày trả</th>
-                                            <th>Trạng thái</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-											<td>978-3-16-148410-0</td>
-                                            <td>Harry Potter</td>
-                                            <td>Author Name</td>
-                                            <td>20/10/2021</td>
-                                            <td>20/11/2021</td>
-                                            <td>Đang xử lý</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-											<td>978-3-16-148410-0</td>
-                                            <td>Harry Potter</td>
-                                            <td>Author Name</td>
-                                            <td>20/10/2021</td>
-                                            <td>20/11/2021</td>
-                                            <td>Đang xử lý</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-											<td>978-3-16-148410-0</td>
-                                            <td>Harry Potter</td>
-                                            <td>Author Name</td>
-                                            <td>20/10/2021</td>
-                                            <td>20/11/2021</td>
-                                            <td>Đang mượn</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-											<td>978-3-16-148410-0</td>
-                                            <td>Harry Potter</td>
-                                            <td>Author Name</td>
-                                            <td>20/10/2021</td>
-                                            <td>20/11/2021</td>
-                                            <td>Đang mượn</td>
-                                        </tr>
-                                        <tr>
-                                            <td>5</td>
-											<td>978-3-16-148410-0</td>
-                                            <td>Harry Potter</td>
-                                            <td>Author Name</td>
-                                            <td>20/10/2021</td>
-                                            <td>20/11/2021</td>
-                                            <td>Đang mượn</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+								<table class="table">
+									<thead>
+										<tr>
+											<th>STT</th>
+											<th>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Mã ISBN"
+													>Mã ISBN</span
+												>
+											</th>
+											<th>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Tên sách"
+													>Tên sách</span
+												>
+											</th>
+											<th>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Tác giả"
+													>Tác giả</span
+												>
+											</th>
+											<th>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Ngày mượn"
+													>Ngày mượn</span
+												>
+											</th>
+											<th>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Ngày trả"
+													>Ngày trả</span
+												>
+											</th>
+											<th>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Trạng thái"
+													>Trạng thái</span
+												>
+											</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="978-3-16-148410-0"
+													>978-3-16-148410-0</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Harry Potter"
+													>Harry Potter</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="J.K. Rowling"
+													>J.K. Rowling</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="20/10/2021"
+													>20/10/2021</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="20/11/2021"
+													>20/11/2021</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Đang xử lý"
+													>Đang xử lý</span
+												>
+											</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="978-3-16-148410-0"
+													>978-3-16-148410-0</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Harry Potter"
+													>Harry Potter</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="J.K. Rowling"
+													>J.K. Rowling</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="20/10/2021"
+													>20/10/2021</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="20/11/2021"
+													>20/11/2021</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Đang xử lý"
+													>Đang xử lý</span
+												>
+											</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="978-3-16-148410-0"
+													>978-3-16-148410-0</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Harry Potter"
+													>Harry Potter</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="J.K. Rowling"
+													>J.K. Rowling</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="20/10/2021"
+													>20/10/2021</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="20/11/2021"
+													>20/11/2021</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Đang mượn"
+													>Đang mượn</span
+												>
+											</td>
+										</tr>
+										<tr>
+											<td>4</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="978-3-16-148410-0"
+													>978-3-16-148410-0</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Harry Potter"
+													>Harry Potter</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="J.K. Rowling"
+													>J.K. Rowling</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="20/10/2021"
+													>20/10/2021</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="20/11/2021"
+													>20/11/2021</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Đang mượn"
+													>Đang mượn</span
+												>
+											</td>
+										</tr>
+										<tr>
+											<td>5</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="978-3-16-148410-0"
+													>978-3-16-148410-0</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Harry Potter"
+													>Harry Potter</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="J.K. Rowling"
+													>J.K. Rowling</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="20/10/2021"
+													>20/10/2021</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="20/11/2021"
+													>20/11/2021</span
+												>
+											</td>
+											<td>
+												<span
+													class="d-block text-truncate"
+													data-bs-toggle="tooltip"
+													title="Đang mượn"
+													>Đang mượn</span
+												>
+											</td>
+										</tr>
+									</tbody>
+								</table>
 
-                                <div class="pagination">
+								<div class="pagination">
 									<a href="#" class="pagination__prev">
 										<i class="fa fa-arrow-left"></i>
 									</a>
 
-									<a href="#" class="pagination__number pagination__number--active">1</a>
+									<a
+										href="#"
+										class="pagination__number pagination__number--active"
+										>1</a
+									>
 									<a href="#" class="pagination__number">2</a>
 									<a href="#" class="pagination__number">3</a>
 									<a href="#" class="pagination__number">4</a>
@@ -227,38 +562,41 @@
 										<i class="fa fa-arrow-right"></i>
 									</a>
 								</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 
 			<!-- footer -->
 			<footer class="footer">
-                <ul class="contact">
-                    <li class="contact__item">
-                        <a class="contact__item-icon" href="https://github.com/phandinhphu">
-                            <i class="fa-brands fa-github"></i>
-                        </a>
-                    </li>
-                    <li class="contact__item">
-                        <a class="contact__item-icon" href="#">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li class="contact__item">
-                        <a class="contact__item-icon" href="#">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li class="contact__item">
-                        <a class="contact__item-icon" href="#">
-                            <i class="fa-brands fa-twitter"></i>
-                        </a>
-                    </li>
-                </ul>
-                <p class="text-center text-white">© 2024 Phan Đình Phú</p>
-            </footer>
+				<ul class="contact">
+					<li class="contact__item">
+						<a
+							class="contact__item-icon"
+							href="https://github.com/phandinhphu"
+						>
+							<i class="fa-brands fa-github"></i>
+						</a>
+					</li>
+					<li class="contact__item">
+						<a class="contact__item-icon" href="#">
+							<i class="fa-brands fa-instagram"></i>
+						</a>
+					</li>
+					<li class="contact__item">
+						<a class="contact__item-icon" href="#">
+							<i class="fa-brands fa-facebook"></i>
+						</a>
+					</li>
+					<li class="contact__item">
+						<a class="contact__item-icon" href="#">
+							<i class="fa-brands fa-twitter"></i>
+						</a>
+					</li>
+				</ul>
+				<p class="text-center text-white">© 2024 Nhóm 3</p>
+			</footer>
 		</div>
 
 		<script src="./assets/js/main.js"></script>
@@ -278,5 +616,17 @@
 			integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
 			crossorigin="anonymous"
 		></script>
+
+		<script>
+			// Initialize tooltips
+			var tooltipTriggerList = [].slice.call(
+				document.querySelectorAll('[data-bs-toggle="tooltip"]')
+			);
+			var tooltipList = tooltipTriggerList.map(function (
+				tooltipTriggerEl
+			) {
+				return new bootstrap.Tooltip(tooltipTriggerEl);
+			});
+		</script>
 	</body>
 </html>

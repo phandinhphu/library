@@ -32,9 +32,19 @@
 			  max-width: 150px; /* Adjust the width as needed */
 			}
 
+			.tooltip.show {
+				opacity: 1;
+			}
+
+			.tooltip-arrow::before {
+				border-top-color: var(--color-white) !important; /* Màu nền */
+			}
+
 			.tooltip-inner {
 				font-size: 1.6rem;  /* Tăng kích thước font chữ */
 				padding: 0.8rem;     /* Điều chỉnh khoảng cách */
+				background-color: var(--color-white); /* Màu nền */
+				color: var(--color-black); /* Màu chữ */
 			}
 
 			@media (max-width: 63.9375em) {
@@ -141,7 +151,9 @@
                                                 <option value="1">Tên sách(A->Z)</option>
                                                 <option value="2">Ngày mượn(giảm dần)</option>
                                                 <option value="3">Ngày trả(giảm dần)</option>
-                                                <option value="4">Đã trả</option>
+                                                <option value="4">
+                                                    <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Đã trả">Đã trả</span>
+                                                </option>
                                                 <option value="5">Quá hạn</option>
                                             </select>
                                         </div>
@@ -158,65 +170,147 @@
                                     <thead>
                                         <tr>
                                             <th>STT</th>
-                                            <th>Mã ISBN</th>
-                                            <th>Tên sách</th>
-                                            <th>Tên tác giả</th>
-                                            <th>Ngày mượn</th>
-                                            <th>Ngày trả</th>
-                                            <th>Trạng thái</th>
-                                            <th>Phí phạt</th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Mã ISBN">Mã ISBN</span>
+                                            </th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Tên sách">Tên sách</span>
+                                            </th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Tác giả">Tác giả</span>
+                                            </th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Ngày mượn">Ngày mượn</span>
+                                            </th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Ngày trả">Ngày trả</span>
+                                            </th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Trạng thái">Trạng thái</span>
+                                            </th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Phí phạt">Phí phạt</span>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td>1</td>
-											<td>978-3-16-148410-0</td>
-                                            <td>Harry Potter</td>
-                                            <td>J.K.Rowling</td>
-                                            <td>01/01/2021</td>
-                                            <td>01/02/2021</td>
-                                            <td>Đã trả</td>
-                                            <td>0</td>
+											<td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="978-3-16-148410-0">978-3-16-148410-0</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Harry Potter và Hòn đá Phù thủy">Harry Potter và Hòn đá Phù thủy</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="J.K. Rowling">J.K. Rowling</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="01/01/2021">01/01/2021</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="01/02/2021">01/02/2021</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Đã trả">Đã trả</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="0">0</span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>2</td>
-											<td>978-3-16-148410-0</td>
-                                            <td>Harry Potter</td>
-                                            <td>J.K.Rowling</td>
-                                            <td>01/01/2021</td>
-                                            <td>01/02/2021</td>
-                                            <td>Đã trả</td>
-                                            <td>0</td>
+											<td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="978-3-16-148410-0">978-3-16-148410-0</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Harry Potter và Hòn đá Phù thủy">Harry Potter và Hòn đá Phù thủy</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="J.K. Rowling">J.K. Rowling</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="01/01/2021">01/01/2021</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="01/02/2021">01/02/2021</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Đã trả">Đã trả</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="0">0</span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>3</td>
-											<td>978-3-16-148410-0</td>
-                                            <td>Harry Potter</td>
-                                            <td>J.K.Rowling</td>
-                                            <td>01/01/2021</td>
-                                            <td>01/02/2021</td>
-                                            <td>Đã trả</td>
-                                            <td>0</td>
+											<td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="978-3-16-148410-0">978-3-16-148410-0</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Harry Potter và Hòn đá Phù thủy">Harry Potter và Hòn đá Phù thủy</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="J.K. Rowling">J.K. Rowling</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="01/01/2021">01/01/2021</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="01/02/2021">01/02/2021</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Đã trả">Đã trả</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="0">0</span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>4</td>
-											<td>978-3-16-148410-0</td>
-                                            <td>Harry Potter</td>
-                                            <td>J.K.Rowling</td>
-                                            <td>01/01/2021</td>
-                                            <td>01/02/2021</td>
-                                            <td>Đã trả (quá hạn)</td>
-                                            <td>45000đ</td>
+											<td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="978-3-16-148410-0">978-3-16-148410-0</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Harry Potter và Hòn đá Phù thủy">Harry Potter và Hòn đá Phù thủy</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="J.K. Rowling">J.K. Rowling</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="01/01/2021">01/01/2021</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="01/02/2021">01/02/2021</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Đã trả">Đã trả (quá hạn)</span>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="45000đ">45000đ</span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>5</td>
-											<td>978-3-16-148410-0</td>
-                                            <td>Harry Potter</td>
-                                            <td>J.K.Rowling</td>
-                                            <td>01/01/2021</td>
-                                            <td>01/02/2021</td>
-                                            <td>Đã trả (quá hạn)</td>
-                                            <td>25000đ</td>
+											<td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="978-3-16-148410-0">978-3-16-148410-0</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Harry Potter và Hòn đá Phù thủy">Harry Potter và Hòn đá Phù thủy</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="J.K. Rowling">J.K. Rowling</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="01/01/2021">01/01/2021</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="01/02/2021">01/02/2021</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Đã trả">Đã trả (quá hạn)</span>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="25000đ">25000đ</span>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -247,22 +341,46 @@
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th>Tổng số sách đã mượn</th>
-                                            <th>Tổng số sách đã trả</th>
-                                            <th>Tổng số sách đã trả (quá hạn)</th>
-                                            <th>Tổng số sách chưa trả</th>
-                                            <th>Tổng số sách chưa trả (quá hạn)</th>
-                                            <th>Tổng phí phạt</th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Tổng số sách">Tổng số sách</span>
+                                            </th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Tổng số sách đã trả">Tổng số sách đã trả</span>
+                                            </th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Tổng số sách đã trả (quá hạn)">Tổng số sách đã trả (quá hạn)</span>
+                                            </th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Tổng số sách chưa trả">Tổng số sách chưa trả</span>
+                                            </th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Tổng số sách chưa trả (quá hạn)">Tổng số sách chưa trả (quá hạn)</span>
+                                            </th>
+                                            <th>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="Tổng phí phạt">Tổng phí phạt</span>
+                                            </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>10</td>
-                                            <td>8</td>
-                                            <td>2</td>
-                                            <td>2</td>
-                                            <td>1</td>
-                                            <td>70000đ</td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="10">10</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="8">8</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="2">2</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="2">2</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="1">1</span>
+                                            </td>
+                                            <td>
+                                                <span class="d-block text-truncate" data-bs-toggle="tooltip" title="70000đ">70000đ</span>
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -296,7 +414,7 @@
                         </a>
                     </li>
                 </ul>
-                <p class="text-center text-white">© 2024 Phan Đình Phú</p>
+                <p class="text-center text-white">© 2024 Nhóm 3</p>
             </footer>
 		</div>
 
@@ -317,5 +435,17 @@
 			integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
 			crossorigin="anonymous"
 		></script>
+
+        <script>
+			// Initialize tooltips
+			var tooltipTriggerList = [].slice.call(
+				document.querySelectorAll('[data-bs-toggle="tooltip"]')
+			);
+			var tooltipList = tooltipTriggerList.map(function (
+				tooltipTriggerEl
+			) {
+				return new bootstrap.Tooltip(tooltipTriggerEl);
+			});
+		</script>
 	</body>
 </html>
